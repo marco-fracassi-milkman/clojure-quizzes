@@ -1,7 +1,12 @@
-(require
-  '[datomic.api :as d]
-  '[datomic.samples.repl :as repl])
+(ns quiz.atom
+  (:gen-class))
 
+
+
+
+(defn counter [count]
+
+)
 ; define a counter using 'atom'
 
 
