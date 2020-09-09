@@ -41,3 +41,11 @@
       )
     )
   )
+
+(deftest increaseAllTheNumberValuesTest
+  (testing "increase all the number values"
+    (let [result (increaseAllTheNumberValues [{:a 1 :b "2"} {:c 3 :d 4} {:e 5 :f 6}])]
+      (is (= result [{:a 2 :b "2"} {:c 4 :d 5} {:e 6 :f 7}]))
+      )
+    )
+  )

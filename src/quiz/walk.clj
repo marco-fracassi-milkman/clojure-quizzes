@@ -54,12 +54,12 @@
 ; is a list of all the letters that appear as first element without duplicates
 ; [["ab" 1] ["b" 2] ["c" 3]]
 
-(defn splittedFirst [vector]
+(defn splitFirst [vector]
   (str/split (first vector) #"")
 )
 
 (defn listOfAllTheLettersThatAppearAsFirstElementWithoutDuplicates [matrix]
-  (distinct (flatten (map splittedFirst matrix)))
+  (distinct (flatten (map splitFirst matrix)))
 )
 
 ; 'postwalk' the following map. For each iteration of 'postwalk',
@@ -74,4 +74,21 @@
 ; only if they are numbers
 ; [{:a 1 :b "2"} {:c 3 :d 4} {:e 5 :f 6}]
 
+(defn increment [value]
+  (if (number? value)
+    (+ 1 value)
+    value
+  )
+)
 
+(defn incrementValue [pair]
+  [(key pair) (increment (val pair))]
+)
+
+(defn elaborateMap [hashmap]
+  (apply hash-map (flatten (map incrementValue hashmap)))
+)
+
+(defn increaseAllTheNumberValues [vector]
+  (map elaborateMap vector)
+)
