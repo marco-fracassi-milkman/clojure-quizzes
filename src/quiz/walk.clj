@@ -2,6 +2,7 @@
   (:gen-class))
 
 (require '[clojure.walk :refer :all])
+(require '[clojure.string :as str])
 
 ; walk the following collection so that the result
 ; is the first argument of each inner vector in reverse order
@@ -53,7 +54,13 @@
 ; is a list of all the letters that appear as first element without duplicates
 ; [["ab" 1] ["b" 2] ["c" 3]]
 
+(defn splittedFirst [vector]
+  (str/split (first vector) #"")
+)
 
+(defn listOfAllTheLettersThatAppearAsFirstElementWithoutDuplicates [matrix]
+  (distinct (flatten (map splittedFirst matrix)))
+)
 
 ; 'postwalk' the following map. For each iteration of 'postwalk',
 ; print:

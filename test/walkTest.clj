@@ -33,3 +33,11 @@
       )
     )
   )
+
+(deftest listOfAllTheLettersThatAppearAsFirstElementWithoutDuplicatesTest
+  (testing "list of all the letters that appear as first element without duplicates"
+    (let [result (listOfAllTheLettersThatAppearAsFirstElementWithoutDuplicates [["abf" 1] ["b" 2] ["c" 3]])]
+      (is (= result ["a" "b" "f" "c"]))
+      )
+    )
+  )
